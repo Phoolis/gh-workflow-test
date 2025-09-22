@@ -6,6 +6,7 @@ on:
       - "main"
       - "releases/**" # all sub-branches under releases-branch
       - "!releases/**-alpha" # exlude any branches under releases tagged with -alpha
+
 jobs: # Steps in a job are ran in sequential order. Multiple jobs are run concurrently
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -25,3 +26,8 @@ jobs: # Steps in a job are ran in sequential order. Multiple jobs are run concur
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+
+  Second-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This is a second job"
