@@ -18,7 +18,7 @@ jobs: # Steps in a job are ran in sequential order. Multiple jobs are run concur
         uses: actions/checkout@v4 # Readymade action: https://github.com/actions/checkout/tree/v4/
         # Find more readymade actions from GitHub Marketplace: https://github.com/marketplace?type=actions
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-        # with if: always() the following step is always run
+        # Adding if always() the following step will be ran even on a previous step failing
       - if: always()
         run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
