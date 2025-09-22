@@ -28,6 +28,7 @@ jobs: # Steps in a job are ran in sequential order. Multiple jobs are run concur
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
   Second-job:
+    needs: Explore-GitHub-Actions # Will only start on successful finish of the specified job
     runs-on: ubuntu-latest
     steps:
       - run: echo "This is a second job"
